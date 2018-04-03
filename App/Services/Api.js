@@ -7,10 +7,10 @@ const create = (baseURL = 'http://www.thecocktaildb.com/api/json/v1/1') => {
         timeout: 15000
     })
 
-    const getGlassCocktails = () => api.get('/filter.php', { g: 'Cocktail_glass' })
+    const getCocktails = () => api.get('/filter.php', { g: 'Cocktail_glass' })
 
     return {
-        getGlassCocktails,
+        getCocktails,
     }
 }
 
