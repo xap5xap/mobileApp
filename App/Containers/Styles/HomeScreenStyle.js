@@ -14,11 +14,15 @@ export default StyleSheet.create({
         paddingTop: Metrics.baseMargin,
         backgroundColor: Colors.transparent
     },
-    welcome: {
-        fontSize: 20,
+    infoMessage: {
+        fontSize: Fonts.size.regular,
         textAlign: 'center',
         fontFamily: Fonts.type.base,
         margin: Metrics.baseMargin
     },
+    ellipsis:{
+        color: Colors.black,
+        fontSize: Fonts.size.h3,
+    }
 
 })
