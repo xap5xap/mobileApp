@@ -3,6 +3,12 @@ import { Fonts, Metrics, Colors, ApplicationStyles } from '../../Themes'
 
 export default StyleSheet.create({
     ...ApplicationStyles.screen,
+    logo: {
+        height: Metrics.images.titleLogo,
+        width: Metrics.images.titleLogo,
+        resizeMode: 'contain',
+        marginRight: Metrics.baseMargin
+    },
     lista: {
         flex: 1,
         paddingTop: Metrics.baseMargin,

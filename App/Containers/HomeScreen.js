@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, Image, ListView } from 'react-native'
+import { View, Text, Image, ListView, StatusBar } from 'react-native'
 import { connect } from 'react-redux'
 import styles from './Styles/HomeScreenStyle'
 import CocktailRow from '../Components/CocktailRow'
 import CocktailsActions from '../Redux/CocktailsRedux'
+import {Images} from '../Themes'
 
 
 class HomeScreen extends Component {
@@ -45,6 +46,10 @@ class HomeScreen extends Component {
 
         return (
             <View style={styles.container}>
+                <View style={styles.statusbar}>
+                    <Image source={Images.logo} style={styles.logo}></Image>
+                    <Text style={styles.statusBarTitle}>Cocktails</Text>
+                </View>
                 {HAS_ERROR && <Text style={styles.welcome}>Error fetching data</Text>}
                 {IS_LOADING && <Text style={styles.welcome}>Making Cocktails...</Text>}
                 {!IS_LOADING && !HAS_ERROR &&

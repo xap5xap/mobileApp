@@ -7,8 +7,17 @@ const ApplicationStyles = {
     screen: {
         container: {
             flex: 1,
-            paddingTop: Metrics.baseMargin,
-            backgroundColor: Colors.background
+        },
+        statusbar: {
+            height: Metrics.navBarHeight,
+            backgroundColor: Colors.black,
+            justifyContent: 'center',
+            alignItems:'center',
+            flexDirection:'row'
+        },
+        statusBarTitle:{            
+            color: Colors.white,
+            ...Fonts.style.title,
         }
     }
 }

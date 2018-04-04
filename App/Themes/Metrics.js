@@ -27,7 +27,8 @@ const metrics = {
         small: 20,
         medium: 40,
         large: 60,
-        logo: 200
+        logo: 200,
+        titleLogo: 30
     }
 }
 
