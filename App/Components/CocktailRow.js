@@ -4,8 +4,6 @@ import styles from './Styles/CocktailRowStyle'
 
 
 const CocktailRow = (details) => {
-    // console.log('details stateless', details)
-    // console.log('otro stateless', otro)
     return (
         <View style={styles.container}>
             <View style={styles.body}>
@@ -16,7 +14,7 @@ const CocktailRow = (details) => {
             </View>
             <Image
                 style={{ width: 100, height: 100 }}
-                source={{ uri: 'http://' + details.strDrinkThumb }}
+                source={{ uri: details.strDrinkThumb }}
             />
 
         </View>);

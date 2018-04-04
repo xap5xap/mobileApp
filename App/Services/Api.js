@@ -1,6 +1,6 @@
 import apisauce from 'apisauce'
 
-const create = (baseURL = 'http://www.thecocktaildb.com/api/json/v1/1') => {
+const create = (baseURL = 'https://www.thecocktaildb.com/api/json/v1/1') => {
 
     const api = apisauce.create({
         baseURL,

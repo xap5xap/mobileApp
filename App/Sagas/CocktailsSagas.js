@@ -4,14 +4,9 @@ import CocktailsActions from '../Redux/CocktailsRedux'
 export function* getAllCocktails(api, action) {
     try {
         const response = yield call(api.getCocktails)
-        if (response.ok) {
-            const cocktailDetail = yield response.data.drinks.map(cocktail => call(api.getCocktailById, cocktail.idDrink))
-            const res = cocktailDetail.map(cocktail => {
-                if (cocktail.ok && cocktail.data.drinks) {
-                    return cocktail.data.drinks[0]
-                }
-            })
-            yield put(CocktailsActions.getCocktailsSuccess(res))
+        console.log("response", response)
+        if (response.ok) {          
+            yield put(CocktailsActions.getCocktailsSuccess(response.data.drinks))
         } else {
             yield put(CocktailsActions.getCocktailsFailure('Connection problems :('))
         }
