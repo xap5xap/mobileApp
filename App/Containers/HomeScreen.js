@@ -11,16 +11,11 @@ class HomeScreen extends Component {
    
 
     componentDidMount(){
-        console.log("componentDidMount", this.props)
-        
         this.props.getAllCocktails();
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log("componentWillReceiveProps", nextProps)
-        
         if (this.props.cocktails.cocktails !== nextProps.cocktails.cocktails) {
-            console.log("componentWillReceiveProps 2", nextProps)
             
             const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
             this.setState({
@@ -30,7 +25,6 @@ class HomeScreen extends Component {
     }
 
     renderRow(details) {
-        // console.log('details', details)
         return (
             <CocktailRow {...details} />
         )
@@ -38,11 +32,8 @@ class HomeScreen extends Component {
 
 
     render() {
-        console.log('render', this.props);
         const IS_LOADING = this.props.cocktails.fetching === true
-        console.log('IS_LOADING', IS_LOADING);
         const HAS_ERROR = this.props.cocktails.error === true
-        console.log('HAS_ERROR', HAS_ERROR);
 
         return (
             <View style={styles.container}>
@@ -53,7 +44,7 @@ class HomeScreen extends Component {
                 {HAS_ERROR && <Text style={styles.infoMessage}>Error fetching data</Text>}
                 {IS_LOADING && <Text style={styles.infoMessage}>Making Cocktails <AnimatedEllipsis  style={styles.ellipsis} minOpacity={0.2} /></Text>}
                 {!IS_LOADING && !HAS_ERROR &&
-                    <ListView style={styles.container}
+                    <ListView contentContainerStyle={styles.gridCocktails}
                         dataSource={this.state.dataSource}
                         renderRow={(rowData) => this.renderRow(rowData)}
                     />

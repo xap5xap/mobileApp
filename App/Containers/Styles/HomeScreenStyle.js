@@ -20,9 +20,13 @@ export default StyleSheet.create({
         fontFamily: Fonts.type.base,
         margin: Metrics.baseMargin
     },
-    ellipsis:{
+    ellipsis: {
         color: Colors.black,
         fontSize: Fonts.size.h3,
+    },
+    gridCocktails: {
+        flexDirection: 'row',
+        flexWrap:'wrap'
     }
 
 })
